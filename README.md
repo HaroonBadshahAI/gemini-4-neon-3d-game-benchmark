@@ -14,7 +14,7 @@ This repository contains the source code for **Kurogane III**, a browser-based 3
 - A leaderboard API and ranking logic
 - Mobile touch-control support
 
-These are **code-level observations**, not proof that every mode works correctly in production.
+The public mobile gameplay recording verifies browser rendering, combat, touch controls, knockouts, and tournament progression through Stage 2/4. Other listed modes are code-level features and have not all been independently tested.
 
 ## Run locally
 
@@ -33,11 +33,11 @@ npx tsc --noEmit
 npm run build
 ```
 
-No passing CI/build result is claimed here; execute and record the results in [BENCHMARK.md](BENCHMARK.md).
+**Deployment status:** Vercel reports the production deployment READY and serves the game successfully. This does **not** establish that local lint, TypeScript, and test commands have been executed and passed; their results remain pending in [BENCHMARK.md](BENCHMARK.md).
 
 ## Public play test
 
-**Live game:** Not yet published or verified. Add the actual Vercel URL only after deployment and a browser play test.
+**Live game:** https://gemini-4-neon-3d-game-benchmark.vercel.app/ — production page returned HTTP 200 and mobile gameplay was observed in the user-supplied screen recording (2026-11-19). **Verified mobile gameplay:** arena renders, touch controls appear, fighters exchange blows, K.O. is displayed, and tournament reaches Stage 2/4. This does not yet verify online multiplayer or durable ranked results.
 
 **Deployment caveat:** The custom `server.ts` hosts persistent WebSockets at `/ws`. Standard Vercel Functions cannot host that long-lived WebSocket server. A Vercel frontend requires a separate WebSocket backend and a configurable client connection URL. Online matchmaking is **not guaranteed to work** by deploying the existing repository to Vercel unchanged.
 

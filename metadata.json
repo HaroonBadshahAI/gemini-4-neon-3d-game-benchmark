@@ -1,0 +1,6 @@
+{
+  "name": "KUROGANE III — 3D Martial Arts Fighter",
+  "description": "High-performance WebGL 3D karate and martial arts fighting game inspired by classic 90s arcade fighters, with local 2P versus, tournament progression, online matchmaking, ranked leaderboards, and mobile touch controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

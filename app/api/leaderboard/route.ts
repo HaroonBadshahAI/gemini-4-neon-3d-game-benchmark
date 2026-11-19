@@ -14,6 +14,14 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  // Public ranked submissions must be verified by an authoritative game server.
+  // Preserve the original behavior only for explicit, private development tests.
+  if (process.env.ENABLE_UNVERIFIED_RANKED_WRITES !== 'true') {
+    return NextResponse.json(
+      { error: 'Ranked submissions are disabled until server-verified match results are implemented.' },
+      { status: 503 },
+    );
+  }
   try {
     const body = await req.json();
     const callsign = typeof body.callsign === 'string' ? body.callsign : 'DojoFighter';

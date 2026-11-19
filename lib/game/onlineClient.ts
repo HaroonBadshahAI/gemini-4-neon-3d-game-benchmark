@@ -83,7 +83,7 @@ export class OnlineMatchClient {
     }
 
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsUrl = `${protocol}//${window.location.host}/ws`;
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || `${protocol}//${window.location.host}/ws`;
 
     this.status = 'connecting';
     this.handlers.onStatusChange?.('connecting');

@@ -5,3 +5,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local game ranking data (may contain user-submitted callsigns)
+.data/
